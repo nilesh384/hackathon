@@ -1,3 +1,6 @@
+"use client"
+
+
 // src/app/InvestmentPlan.js (or pages/InvestmentPlan.js)
 export default function InvestmentPlan() {
     return (
@@ -9,33 +12,25 @@ export default function InvestmentPlan() {
   
         <main className="grid max-w-4xl grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3">
           
-          {/* Basic Plan Card */}
           <div className="p-6 text-center bg-white rounded-lg shadow-lg">
-            <img src="https://img.icons8.com/fluency/48/000000/money-bag.png" alt="Basic Plan" className="mx-auto mb-4"/>
-            <h2 className="text-2xl font-bold text-gray-800">Basic Plan</h2>
-            <p className="mt-2 text-gray-600">Ideal for beginners</p>
-            <p className="mt-4 text-4xl font-bold text-blue-800">$100</p>
-            <ul className="mt-4 space-y-2 text-gray-600">
-              <li>Interest Rate: 4%</li>
-              <li>Term: 1 Year</li>
-              <li>Risk Level: Low</li>
-            </ul>
-            <button className="px-4 py-2 mt-6 text-white bg-blue-800 rounded-lg hover:bg-blue-900">
-              Get Started
+            <h2 className="text-2xl font-bold text-gray-800">Bonds</h2>
+            <p className="mt-2 text-gray-600">ICICI corporate bond</p>
+            <p className="mt-4 text-4xl font-bold text-blue-800">min: ₹ 2000</p>
+            <hr></hr>
+            <p className="mt-2 text-gray-600">HDFC corporate Bond</p>
+            <p className="mt-4 text-4xl font-bold text-blue-800">min: ₹ 1600</p>
+            <button  className="px-4 py-2 mt-6 text-white bg-blue-800 rounded-lg hover:bg-blue-900">
+              Invest Now
             </button>
           </div>
   
-          {/* Premium Plan Card */}
           <div className="p-6 text-center bg-white rounded-lg shadow-lg">
-            <img src="https://img.icons8.com/fluency/48/000000/gold-bars.png" alt="Premium Plan" className="mx-auto mb-4"/>
-            <h2 className="text-2xl font-bold text-gray-800">Premium Plan</h2>
-            <p className="mt-2 text-gray-600">Best for growing investments</p>
-            <p className="mt-4 text-4xl font-bold text-blue-800">$500</p>
-            <ul className="mt-4 space-y-2 text-gray-600">
-              <li>Interest Rate: 6%</li>
-              <li>Term: 3 Years</li>
-              <li>Risk Level: Medium</li>
-            </ul>
+            <h2 className="text-2xl font-bold text-gray-800">Exchange Traded Funds</h2>
+            <p className="mt-2 text-gray-600">Avantis US</p>
+            <p className="mt-4 text-4xl font-bold text-blue-800">min: ₹ 8000</p>
+            <hr></hr>
+            <p className="mt-2 text-gray-600">Colombia India Consumer</p>
+            <p className="mt-4 text-4xl font-bold text-blue-800">min: ₹ 4793</p>
             <button className="px-4 py-2 mt-6 text-white bg-blue-800 rounded-lg hover:bg-blue-900">
               Invest Now
             </button>
@@ -43,17 +38,13 @@ export default function InvestmentPlan() {
   
           {/* Elite Plan Card */}
           <div className="p-6 text-center bg-white rounded-lg shadow-lg">
-            <img src="https://img.icons8.com/fluency/48/000000/diamond.png" alt="Elite Plan" className="mx-auto mb-4"/>
-            <h2 className="text-2xl font-bold text-gray-800">Elite Plan</h2>
-            <p className="mt-2 text-gray-600">Perfect for seasoned investors</p>
-            <p className="mt-4 text-4xl font-bold text-blue-800">$1000</p>
-            <ul className="mt-4 space-y-2 text-gray-600">
-              <li>Interest Rate: 8%</li>
-              <li>Term: 5 Years</li>
-              <li>Risk Level: High</li>
-            </ul>
+            <h2 className="text-2xl font-bold text-gray-800">Money Market Fund</h2>
+            <p className="mt-2 text-gray-600">Nippon India</p>
+            <p className="mt-4 text-4xl font-bold text-blue-800">return: 6.03%</p>
+            <p className="mt-2 text-gray-600">Aditya Birla Sun Life</p>
+            <p className="mt-4 text-4xl font-bold text-blue-800">return: 6.18%</p>
             <button className="px-4 py-2 mt-6 text-white bg-blue-800 rounded-lg hover:bg-blue-900">
-              Join Elite
+              Invest Now
             </button>
           </div>
         </main>

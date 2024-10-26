@@ -41,8 +41,11 @@ export default function Home() {
           <span id="element" className="text-[#3FDA49]">
             What can we do for you?
           </span>
-          <div className="mt-6">
-            <button onClick={loginkaro} className="h-12 p-2 bg-blue-600 w-52 rounded-xl">
+          <div className="mt-8">
+            <button
+              onClick={loginkaro}
+              className="h-12 px-8 font-semibold text-white transition-transform duration-300 transform rounded-full shadow-lg bg-gradient-to-r from-blue-600 to-green-500 hover:scale-105 hover:shadow-2xl"
+            >
               Get Started!
             </button>
           </div>
