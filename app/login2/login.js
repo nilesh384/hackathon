@@ -39,7 +39,7 @@ const page = () => {
       <div className="flex items-center justify-center min-h-screen bg-purple-200 font-poppins">
         {/* Login form */}
         <form onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-white border-2 border-purple-700 rounded-lg shadow-lg">
-          <h1 className="p-3 text-lg font-bold text-center text-white rounded-t-lg bg-slate-600">
+          <h1 className="p-3 text-lg font-bold text-center bg-white rounded-t-lg text-slate-600">
             Log In
           </h1>
 
