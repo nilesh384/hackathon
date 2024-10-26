@@ -47,45 +47,51 @@ const page = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <h1 className="flex justify-center p-3 font-bold text-white cursor-default bg-slate-600">
-            Sign Up
-          </h1>
-        </div>
-        <div className="flex flex-col items-center justify-center max-w-full my-32">
+      <div className="flex items-center justify-center min-h-screen bg-purple-200 font-poppins">
+      {/* Sign up form */}
+      <form onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-white border-2 border-purple-700 rounded-lg shadow-lg">
+        <h1 className="p-3 text-lg font-bold text-center text-white rounded-t-lg bg-slate-600">
+          Sign Up
+        </h1>
+        
+        <div className="flex flex-col items-center justify-center my-8 space-y-4">
           <input
             onChange={(e) => setName(e.target.value)}
             placeholder="Username"
             type="text"
             value={name}
-            className="p-1 m-3 text-white rounded-xl bg-slate-500"
-          ></input>
+            className="w-full p-3 text-gray-800 placeholder-gray-600 bg-slate-100 rounded-xl focus:outline-none"
+          />
           <input
-            value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Registration Number"
+            placeholder="Set Email"
             type="text"
-            className="p-1 m-3 text-white rounded-xl bg-slate-500"
-          ></input>
+            value={email}
+            className="w-full p-3 text-gray-800 placeholder-gray-600 bg-slate-100 rounded-xl focus:outline-none"
+          />
           <input
-            value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             type="password"
-            className="p-1 m-3 text-white rounded-xl bg-slate-500"
-          ></input>{" "}
-          <br></br>
-          <button className="p-1 bg-blue-600 rounded-xl">SignUp!</button>{" "}
-          <br></br>
-          <div className="cursor-default">
-            Already LoggedIn?{" "}
-            <Link className="underline" href="/login">
-              Login
+            value={password}
+            className="w-full p-3 text-gray-800 placeholder-gray-600 bg-slate-100 rounded-xl focus:outline-none"
+          />
+          
+          <button type="submit" className="w-full p-3 text-white transition-colors duration-200 bg-blue-600 rounded-xl hover:bg-blue-700">
+            Sign Up!
+          </button>
+
+          <div className="mt-4 text-sm text-center text-gray-600">
+            Already have an account?{" "}
+            <Link href="/login">
+              <span className="text-blue-500 underline hover:text-purple-500">
+                Login
+              </span>
             </Link>
           </div>
         </div>
       </form>
+    </div>
     </>
   );
 };

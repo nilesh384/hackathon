@@ -36,38 +36,42 @@ const page = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <h1 className="flex justify-center p-3 font-bold text-white cursor-default bg-slate-600">
-            LogIn
+      <div className="flex items-center justify-center min-h-screen bg-purple-200 font-poppins">
+        {/* Login form */}
+        <form onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-white border-2 border-purple-700 rounded-lg shadow-lg">
+          <h1 className="p-3 text-lg font-bold text-center text-white rounded-t-lg bg-slate-600">
+            Log In
           </h1>
-        </div>
-        <div className="flex flex-col items-center justify-center max-w-full my-32">
-          <input
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Registration Number"
-            type="text"
-            value={email}
-            className="p-1 m-3 text-white rounded-xl bg-slate-500"
-          ></input>
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            type="password"
-            className="p-1 m-3 text-white rounded-xl bg-slate-500"
-          ></input>{" "}
-          <br></br>
-          <button className="p-1 bg-blue-600 rounded-xl">LogIn!</button>{" "}
-          <br></br>
-          <div className="cursor-default">
-            New User?{" "}
-            <Link className="underline" href="/signup">
-              Sign Up
-            </Link>
+
+          <div className="flex flex-col items-center mt-6 space-y-4">
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email"
+              type="text"
+              value={email}
+              className="w-full p-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md bg-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-600"
+            />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Password"
+              type="password"
+              className="w-full p-2 text-gray-900 placeholder-gray-500 border border-gray-300 rounded-md bg-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-600"
+            />
+            {error && <p className="text-red-500">{error}</p>}
+            <button className="w-full p-2 mt-4 font-bold text-white bg-blue-600 rounded-md hover:bg-blue-700">
+              Log In!
+            </button>
+
+            <div className="mt-4 text-sm text-gray-700">
+              New User?{" "}
+              <Link href="/signup" className="font-semibold text-blue-600 hover:underline">
+                Sign Up
+              </Link>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </>
   );
 };
