@@ -21,9 +21,9 @@ export default function SignOut() {
       alert('You are not an Adult');
     } else {
       if (ans <= 10000) {
-        alert("Invest, don't spend too much!");
+        alert("We currently advice you to stay away from invesments considering your available funds");
       } else if (ans === 0) {
-        alert('You have no available balance to invest');
+        alert('We currently advice you to stay away from invesments considering your available funds');
       } else {
         if (volatility === 'low') {
           redirect('/lowinvest');

@@ -14,7 +14,6 @@ export default function InvestmentPlan() {
         <main className="grid max-w-4xl grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3">
           
           <div className="p-6 text-center bg-white rounded-lg shadow-lg">
-            <img src="https://img.icons8.com/fluency/48/000000/money-bag.png" alt="Basic Plan" className="mx-auto mb-4"/>
             <h2 className="text-2xl font-bold text-gray-800">Crypto Currency</h2>
             <p className="mt-2 text-gray-600">Bitcoin</p>
             <p className="mt-4 text-4xl font-bold text-blue-800">1 btc = ₹ 56,50,000</p>
