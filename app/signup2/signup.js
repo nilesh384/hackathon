@@ -1,21 +1,19 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  //Routing after signup to login
+  // Routing after signup to login
   const router = useRouter();
-  
 
-  //Form submit function
+  // Form submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -25,7 +23,7 @@ const page = () => {
     }
 
     try {
-      const res = await fetch("api/register", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,57 +32,62 @@ const page = () => {
       });
 
       if (res.ok) {
-        const form = e.target;
-        form.reset();
         router.push("/login");
       } else {
-        console.log("User sign up failed");
+        setError("User sign up failed.");
       }
     } catch (err) {
       console.log("Error", err);
+      setError("An error occurred. Please try again.");
     }
   };
 
   return (
-    <>
-      <div className="flex items-center justify-center min-h-screen bg-purple-200 font-poppins">
-      {/* Sign up form */}
-      <form onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-white border-2 border-purple-700 rounded-lg shadow-lg">
-        <h1 className="p-3 text-lg font-bold text-center bg-white rounded-t-lg text-slate-600">
-          Sign Up
-        </h1>
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-purple-300 via-purple-400 to-blue-300 font-poppins">
+      {/* Container with background and shadow */}
+      <form
+        onSubmit={handleSubmit}
+        className="w-full max-w-md p-8 transition duration-300 ease-in-out transform bg-white border border-purple-400 shadow-2xl bg-opacity-90 backdrop-blur-md rounded-xl hover:scale-105"
+      >
+        <h1 className="text-2xl font-bold text-center text-purple-800">Sign Up</h1>
         
-        <div className="flex flex-col items-center justify-center my-8 space-y-4">
+        {/* Display error message if any */}
+        {error && <p className="mt-2 text-sm text-center text-red-500">{error}</p>}
+
+        <div className="flex flex-col items-center justify-center my-8 space-y-6">
           <input
             onChange={(e) => setName(e.target.value)}
             placeholder="Username"
             type="text"
             value={name}
-            className="w-full p-3 text-gray-800 placeholder-gray-600 bg-slate-100 rounded-xl focus:outline-none"
+            className="w-full p-3 text-gray-800 placeholder-gray-600 transition duration-200 transform rounded-full bg-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:scale-105"
           />
           <input
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Set Email"
-            type="text"
+            placeholder="Email"
+            type="email"
             value={email}
-            className="w-full p-3 text-gray-800 placeholder-gray-600 bg-slate-100 rounded-xl focus:outline-none"
+            className="w-full p-3 text-gray-800 placeholder-gray-600 transition duration-200 transform rounded-full bg-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:scale-105"
           />
           <input
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             type="password"
             value={password}
-            className="w-full p-3 text-gray-800 placeholder-gray-600 bg-slate-100 rounded-xl focus:outline-none"
+            className="w-full p-3 text-gray-800 placeholder-gray-600 transition duration-200 transform rounded-full bg-slate-100 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:scale-105"
           />
           
-          <button type="submit" className="w-full p-3 text-white transition-colors duration-200 bg-blue-600 rounded-xl hover:bg-blue-700">
+          <button
+            type="submit"
+            className="w-full p-3 font-bold text-white transition-all duration-200 transform rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-blue-600 hover:bg-purple-700 hover:from-blue-600 hover:to-purple-700 hover:scale-105 focus:outline-none"
+          >
             Sign Up!
           </button>
 
           <div className="mt-4 text-sm text-center text-gray-600">
             Already have an account?{" "}
             <Link href="/login">
-              <span className="text-blue-500 underline hover:text-purple-500">
+              <span className="text-purple-600 underline transition-colors duration-200 cursor-pointer hover:text-purple-800">
                 Login
               </span>
             </Link>
@@ -92,8 +95,7 @@ const page = () => {
         </div>
       </form>
     </div>
-    </>
   );
 };
 
-export default page;
+export default Page;
