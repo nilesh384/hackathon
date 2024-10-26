@@ -11,12 +11,25 @@ export default function signout() {
   const handleSubmit = (event) => {
     event.preventDefault();
     
-    const ans = income - expenses;
-    if (ans >= 10000) {
-      alert("Invest madarchod");
+    let ans = income - expenses;
+
+    //Temporary
+      
+    if (ans <= 10000) {
+        alert("Invest dont"); //make a webpage and redirect
+    } else if(ans=0) {
+        alert("You have no available balance to invest")
     } else {
-      alert("Invest dont");
+        if (volatility == 'low') {
+            alert("low")
+        } else if (volatility == 'high') {
+            alert("high")
+        } else if (volatility == 'medium') {
+            alert("medium")
+        }
     }
+
+    
   };
 
   return (
@@ -92,6 +105,23 @@ export default function signout() {
                   <option value="3_years">3 Years</option>
                 </select>
               </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="time"
+                  className="block mb-2 font-semibold text-gray-700"
+                >
+                  Age:
+                </label>
+                <input
+                  id="age"
+                  name="age"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required
+                  placeholder="eg: 35"
+                />
+              </div>
+
               <div className="mb-6">
                 <label
                   htmlFor="volatility"
